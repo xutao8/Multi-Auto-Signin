@@ -1,0 +1,34 @@
+{
+  "name": "my-actions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Manga.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MayoBlueSky/My-Actions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MayoBlueSky/My-Actions/issues"
+  },
+  "homepage": "https://github.com/MayoBlueSky/Actions#readme",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "axios-cookiejar-support": "^1.0.1",
+    "crypto-js": "^4.0.0",
+    "download": "^8.0.0",
+    "fs-extra": "^9.0.1",
+    "got": "^11.8.2",
+    "moment": "^2.29.1",
+    "p-queue": "^6.6.2",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5",
+    "tough-cookie": "^4.0.0",
+    "tunnel": "0.0.6"
+  }
+}

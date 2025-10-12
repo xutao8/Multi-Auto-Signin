@@ -1,0 +1,29 @@
+name: 同步源仓库
+on:
+  schedule:
+    - cron: '1 0,15 * * *'
+  workflow_dispatch:
+  watch:
+    types: started
+  repository_dispatch:
+    types: 同步源仓库
+jobs:
+  repo-sync:
+    env:
+      PAT: ${{ secrets.PAT || github.event.client_payload.PAT }}
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id || ! github.event.sender.id || github.actor == 'BlueSkyClouds'
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+
+      - name: sync scripts
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/MayoBlueSky/My-Actions.git"
+          source_branch: "master"
+          destination_branch: "master"
+          github_token: ${{ secrets.PAT || github.event.client_payload.PAT }}
