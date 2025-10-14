@@ -82,7 +82,7 @@ def execute(user, password, min_step, max_step):
     print(f"修改步数（{step}）[" + response['message'] + "]")
     print(f"账号：{user[:3]}****{user[7:]}\n修改步数（{step}）[" + response['message'] + "]\n")
     if not os.environ.get('SEND_KEY'):
-        sendNotify.send(title="小米运动自动刷步数", msg="【小米运动自动刷步数】\n" + response['message'] + "]")
+        sendNotify.send(title="小米运动自动刷步数", msg=f"【小米运动自动刷步数】\n账号：{user[:3]}****{user[7:]}\n修改步数（{step}）[" + response['message'] + "]\n")
     return True
 
 
